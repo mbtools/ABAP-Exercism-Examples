@@ -11,7 +11,7 @@ CLASS zcl_word_count_example DEFINITION
         count TYPE i,
       END OF return_structure .
     TYPES:
-      return_table TYPE STANDARD TABLE OF return_structure WITH KEY word .
+      return_table TYPE STANDARD TABLE OF return_structure WITH KEY word.
 
     METHODS count_words
       IMPORTING
@@ -27,7 +27,7 @@ ENDCLASS.
 CLASS zcl_word_count_example IMPLEMENTATION.
 
 
-  METHOD COUNT_WORDS.
+  METHOD count_words.
     DATA(clean) = replace( val = to_lower( phrase ) sub = `'` with = `` occ = 0 ).
     clean = replace( val = clean sub = `\n` with = ` ` occ = 0 ).
     clean = replace( val = clean sub = `\t` with = ` ` occ = 0 ).
@@ -37,12 +37,7 @@ CLASS zcl_word_count_example IMPLEMENTATION.
 
     LOOP AT words INTO DATA(word).
       DATA(one_result) = VALUE return_structure( word = word count = 1 ).
-      READ TABLE result ASSIGNING FIELD-SYMBOL(<result>) WITH TABLE KEY word = one_result-word.
-      IF sy-subrc = 0.
-        <result>-count = <result>-count + one_result-count.
-      ELSE.
-        INSERT one_result INTO TABLE result.
-      ENDIF.
+      COLLECT one_result INTO result.
     ENDLOOP.
   ENDMETHOD.
 ENDCLASS.

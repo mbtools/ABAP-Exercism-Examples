@@ -29,7 +29,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
 
 
   METHOD test_one_word.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'word' count = 1 ) ).
     DATA(act) = cut->count_words( 'word' ).
 
@@ -41,7 +41,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD test_three_words.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'one' count = 1 )
                 ( word = 'of' count = 1 )
                 ( word = 'each' count = 1 ) ).
@@ -55,7 +55,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD test_five_words_multiple.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'one' count = 1 )
                 ( word = 'fish' count = 4 )
                 ( word = 'two' count = 1 )
@@ -71,7 +71,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD test_three_words_comma.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'one' count = 1 )
                 ( word = 'three' count = 1 )
                 ( word = 'two' count = 1 ) ).
@@ -85,7 +85,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD test_three_words_linebreak.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'one' count = 1 )
                 ( word = 'three' count = 1 )
                 ( word = 'two' count = 1 ) ).
@@ -99,7 +99,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD test_special_character.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'car' count = 1 )
                 ( word = 'carpet' count = 1 )
                 ( word = 'as' count = 1 )
@@ -115,7 +115,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD test_words_number_comma.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'testing' count = 2 )
                 ( word = '1' count = 1 )
                 ( word = '2' count = 1 ) ).
@@ -129,7 +129,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD test_case_insensitive.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'go' count = 3 )
                 ( word = 'stop' count = 2 ) ).
     DATA(act) = cut->count_words( 'go Go GO Stop stop' ).
@@ -142,7 +142,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD test_colon_apostrophe.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'first' count = 1 )
                 ( word = 'dont' count = 2 )
                 ( word = 'laugh' count = 1 )
@@ -158,7 +158,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD test_apostrophe.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'joe' count = 1 )
                 ( word = 'cant' count = 1 )
                 ( word = 'tell' count = 1 )
@@ -175,7 +175,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD test_comma_apostroph.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'joe' count = 1 )
                 ( word = 'cant' count = 1 )
                 ( word = 'tell' count = 1 )
@@ -194,7 +194,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD test_whitespaces.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'multiple' count = 1 )
                 ( word = 'whitespaces' count = 1 ) ).
     DATA(act) = cut->count_words( ` multiple   whitespaces` ).
@@ -207,7 +207,7 @@ CLASS ltcl_word_count IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD test_comma_linebreaks.
-    DATA(exp) = VALUE zcl_word_count=>return_table(
+    DATA(exp) = VALUE zcl_word_count_example=>return_table(
                 ( word = 'one' count = 1 )
                 ( word = 'three' count = 1 )
                 ( word = 'two' count = 1 ) ).
