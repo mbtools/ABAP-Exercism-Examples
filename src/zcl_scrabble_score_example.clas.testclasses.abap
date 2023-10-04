@@ -1,7 +1,8 @@
 CLASS ltcl_scrabble_score DEFINITION FOR TESTING DURATION SHORT RISK LEVEL HARMLESS FINAL.
 
   PRIVATE SECTION.
-    DATA cut TYPE REF TO zcl_scrabble_score.
+    DATA cut TYPE REF TO zcl_scrabble_score_example.
+
     METHODS setup.
     METHODS test_lowercase_letter FOR TESTING RAISING cx_static_check.
     METHODS test_uppercase_letter FOR TESTING RAISING cx_static_check.
@@ -15,14 +16,12 @@ CLASS ltcl_scrabble_score DEFINITION FOR TESTING DURATION SHORT RISK LEVEL HARML
     METHODS test_empty_input FOR TESTING RAISING cx_static_check.
     METHODS test_entire_alphabet_available FOR TESTING RAISING cx_static_check.
 
-
-
 ENDCLASS.
 
 CLASS ltcl_scrabble_score IMPLEMENTATION.
 
   METHOD setup.
-    cut = NEW zcl_scrabble_score( ).
+    cut = NEW #( ).
   ENDMETHOD.
 
   " lowercase letter

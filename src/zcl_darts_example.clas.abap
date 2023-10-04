@@ -1,7 +1,7 @@
 CLASS zcl_darts_example DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
 
@@ -10,10 +10,10 @@ CLASS zcl_darts_example DEFINITION
         !x            TYPE f
         !y            TYPE f
       RETURNING
-        VALUE(result) TYPE i .
+        VALUE(result) TYPE i.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
-
 ENDCLASS.
 
 
@@ -21,7 +21,7 @@ ENDCLASS.
 CLASS zcl_darts_example IMPLEMENTATION.
 
 
-  METHOD SCORE.
+  METHOD score.
     IF ( ( x * x ) + ( y * y ) ) <= 1.
       result = 10.
     ELSEIF ( ( x * x ) + ( y * y ) ) <= ( 5 * 5 ).

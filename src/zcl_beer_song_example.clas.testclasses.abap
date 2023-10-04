@@ -1,7 +1,7 @@
 CLASS ltcl_beer_song DEFINITION FOR TESTING RISK LEVEL HARMLESS DURATION SHORT FINAL.
 
   PRIVATE SECTION.
-    DATA cut TYPE REF TO zcl_beer_song.
+    DATA cut TYPE REF TO zcl_beer_song_example.
 
     METHODS setup.
 
@@ -22,7 +22,7 @@ ENDCLASS.
 CLASS ltcl_beer_song IMPLEMENTATION.
 
   METHOD setup.
-    cut = NEW zcl_beer_song( ).
+    cut = NEW #( ).
   ENDMETHOD.
 
   METHOD first_generic_verse.

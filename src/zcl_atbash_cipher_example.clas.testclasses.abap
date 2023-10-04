@@ -1,7 +1,7 @@
 CLASS ltcl_test DEFINITION FOR TESTING DURATION SHORT RISK LEVEL HARMLESS FINAL.
 
   PRIVATE SECTION.
-    DATA mo_cut TYPE REF TO zcl_atbash_cipher.
+    DATA mo_cut TYPE REF TO zcl_atbash_cipher_example.
 
     METHODS setup.
     METHODS encode1 FOR TESTING RAISING cx_static_check.

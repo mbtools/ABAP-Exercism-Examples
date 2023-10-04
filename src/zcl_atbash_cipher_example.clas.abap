@@ -1,7 +1,7 @@
 CLASS zcl_atbash_cipher_example DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
 
@@ -9,12 +9,14 @@ CLASS zcl_atbash_cipher_example DEFINITION
       IMPORTING
         !cipher_text      TYPE string
       RETURNING
-        VALUE(plain_text) TYPE string .
+        VALUE(plain_text) TYPE string.
+
     METHODS encode
       IMPORTING
         !plain_text        TYPE string
       RETURNING
-        VALUE(cipher_text) TYPE string .
+        VALUE(cipher_text) TYPE string.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -24,7 +26,7 @@ ENDCLASS.
 CLASS zcl_atbash_cipher_example IMPLEMENTATION.
 
 
-  METHOD DECODE.
+  METHOD decode.
     plain_text = replace(
       val  = encode( cipher_text )
       sub  = ` `
@@ -33,7 +35,7 @@ CLASS zcl_atbash_cipher_example IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD ENCODE.
+  METHOD encode.
     CONSTANTS abc TYPE string VALUE 'abcdefghijklmnopqrstuvwxyz'.
     DATA(text) = replace( val   = to_lower( plain_text )
                           regex = `[ .,]`

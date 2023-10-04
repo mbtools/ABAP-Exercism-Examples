@@ -2,6 +2,7 @@ CLASS ltcl_grains DEFINITION FOR TESTING DURATION SHORT RISK LEVEL HARMLESS FINA
 
   PRIVATE SECTION.
     DATA cut TYPE REF TO zcl_grains_example.
+
     METHODS setup.
     METHODS test_square_1 FOR TESTING RAISING cx_static_check.
     METHODS test_square_2 FOR TESTING RAISING cx_static_check.
@@ -14,8 +15,6 @@ CLASS ltcl_grains DEFINITION FOR TESTING DURATION SHORT RISK LEVEL HARMLESS FINA
     METHODS test_square_minus_1 FOR TESTING RAISING cx_static_check.
     METHODS test_square_65 FOR TESTING RAISING cx_static_check.
     METHODS test_total FOR TESTING RAISING cx_static_check.
-
-
 
 ENDCLASS.
 

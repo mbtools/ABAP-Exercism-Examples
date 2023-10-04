@@ -1,7 +1,7 @@
 CLASS zcl_minesweeper_example DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
 
@@ -9,7 +9,10 @@ CLASS zcl_minesweeper_example DEFINITION
       IMPORTING
         !input        TYPE string_table
       RETURNING
-        VALUE(result) TYPE string_table .
+        VALUE(result) TYPE string_table.
+
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
 
@@ -17,7 +20,7 @@ ENDCLASS.
 CLASS zcl_minesweeper_example IMPLEMENTATION.
 
 
-  METHOD ANNOTATE.
+  METHOD annotate.
 
     CONCATENATE LINES OF input INTO DATA(field) RESPECTING BLANKS.
     DATA(count) = strlen( field ).

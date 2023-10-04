@@ -1,7 +1,7 @@
 CLASS zcl_scrabble_score_example DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
 
@@ -9,10 +9,10 @@ CLASS zcl_scrabble_score_example DEFINITION
       IMPORTING
         !input        TYPE string OPTIONAL
       RETURNING
-        VALUE(result) TYPE i .
+        VALUE(result) TYPE i.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
-
 ENDCLASS.
 
 
@@ -20,8 +20,8 @@ ENDCLASS.
 CLASS zcl_scrabble_score_example IMPLEMENTATION.
 
 
-  METHOD SCORE.
-  " create scoring table
+  METHOD score.
+    " create scoring table
     TYPES: BEGIN OF ty_scoring_line,
              letter TYPE string,
              value  TYPE i,

@@ -1,12 +1,11 @@
 CLASS zcl_grains_example DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
 
-    TYPES:
-      type_result TYPE p LENGTH 16 DECIMALS 0 .
+    TYPES type_result TYPE decfloat34.
 
     METHODS square
       IMPORTING
@@ -14,15 +13,16 @@ CLASS zcl_grains_example DEFINITION
       RETURNING
         VALUE(result) TYPE type_result
       RAISING
-        cx_parameter_invalid .
+        cx_parameter_invalid.
+
     METHODS total
       RETURNING
         VALUE(result) TYPE type_result
       RAISING
-        cx_parameter_invalid .
+        cx_parameter_invalid.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
-
 ENDCLASS.
 
 

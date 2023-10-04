@@ -1,7 +1,7 @@
 CLASS zcl_nth_prime_example DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
 
@@ -11,10 +11,10 @@ CLASS zcl_nth_prime_example DEFINITION
       RETURNING
         VALUE(result) TYPE i
       RAISING
-        cx_parameter_invalid .
+        cx_parameter_invalid.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
-
 ENDCLASS.
 
 
@@ -22,7 +22,7 @@ ENDCLASS.
 CLASS zcl_nth_prime_example IMPLEMENTATION.
 
 
-  METHOD PRIME.
+  METHOD prime.
     IF input = 0.
       RAISE EXCEPTION TYPE cx_parameter_invalid.
     ENDIF.

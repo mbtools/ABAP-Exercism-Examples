@@ -1,6 +1,6 @@
 CLASS zcl_isogram_example DEFINITION
   PUBLIC
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
 
@@ -8,7 +8,8 @@ CLASS zcl_isogram_example DEFINITION
       IMPORTING
         VALUE(phrase) TYPE string
       RETURNING
-        VALUE(result) TYPE abap_bool .
+        VALUE(result) TYPE abap_bool.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -18,7 +19,7 @@ ENDCLASS.
 CLASS zcl_isogram_example IMPLEMENTATION.
 
 
-  METHOD IS_ISOGRAM.
+  METHOD is_isogram.
     DATA res TYPE c LENGTH 26.
     DO strlen( phrase ) TIMES.
       DATA(pos) = find( val = sy-abcde sub = to_upper( phrase(1) ) ).

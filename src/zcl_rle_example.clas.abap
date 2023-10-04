@@ -1,7 +1,7 @@
 CLASS zcl_rle_example DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
 
@@ -9,12 +9,16 @@ CLASS zcl_rle_example DEFINITION
       IMPORTING
         !input        TYPE string
       RETURNING
-        VALUE(result) TYPE string .
+        VALUE(result) TYPE string.
+
     METHODS decode
       IMPORTING
         !input        TYPE string
       RETURNING
-        VALUE(result) TYPE string .
+        VALUE(result) TYPE string.
+
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
 
@@ -22,7 +26,7 @@ ENDCLASS.
 CLASS zcl_rle_example IMPLEMENTATION.
 
 
-  METHOD DECODE.
+  METHOD decode.
     DATA(inp) = input.
     DO.
       IF inp IS INITIAL.
@@ -42,7 +46,7 @@ CLASS zcl_rle_example IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD ENCODE.
+  METHOD encode.
     DATA(inp) = input.
     DATA chr TYPE string.
     DATA prev TYPE string.

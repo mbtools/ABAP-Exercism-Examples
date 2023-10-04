@@ -1,7 +1,7 @@
 CLASS ltcl_minesweeper DEFINITION FOR TESTING RISK LEVEL HARMLESS DURATION SHORT FINAL.
 
   PRIVATE SECTION.
-    DATA cut TYPE REF TO zcl_minesweeper.
+    DATA cut TYPE REF TO zcl_minesweeper_example.
 
     METHODS setup.
     METHODS cross FOR TESTING RAISING cx_static_check.
@@ -22,7 +22,7 @@ ENDCLASS.
 CLASS ltcl_minesweeper IMPLEMENTATION.
 
   METHOD setup.
-    cut = NEW zcl_minesweeper( ).
+    cut = NEW #( ).
   ENDMETHOD.
 
   METHOD no_rows.

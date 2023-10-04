@@ -1,7 +1,7 @@
 CLASS zcl_beer_song_example DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
 
@@ -10,7 +10,8 @@ CLASS zcl_beer_song_example DEFINITION
         !initial_bottles_count TYPE i
         !take_down_count       TYPE i
       RETURNING
-        VALUE(result)          TYPE string_table .
+        VALUE(result)          TYPE string_table.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
 
@@ -21,6 +22,7 @@ CLASS zcl_beer_song_example DEFINITION
         !wall         TYPE c DEFAULT 'y'
       RETURNING
         VALUE(result) TYPE string.
+
 ENDCLASS.
 
 
@@ -28,14 +30,14 @@ ENDCLASS.
 CLASS zcl_beer_song_example IMPLEMENTATION.
 
 
-  METHOD BOTTLES.
+  METHOD bottles.
     result = |{ COND #( WHEN count = 0 THEN |{ prefix }o more | ELSE count ) }|
           && |bottle{ COND #( WHEN count <> 1 THEN `s` ) } of beer|
           && |{ COND #( WHEN wall = 'y' THEN ' on the wall' ) }|.
   ENDMETHOD.
 
 
-  METHOD RECITE.
+  METHOD recite.
 
     INSERT |{ bottles( count = initial_bottles_count prefix = 'N' ) },|
       && | { bottles( count = initial_bottles_count wall = 'N' ) }.|

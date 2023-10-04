@@ -1,21 +1,20 @@
 CLASS zcl_prime_factors_example DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
 
-    TYPES:
-      integertab TYPE STANDARD TABLE OF i WITH EMPTY KEY .
+    TYPES integertab TYPE STANDARD TABLE OF i WITH EMPTY KEY.
 
     METHODS factors
       IMPORTING
         !input        TYPE int8
       RETURNING
-        VALUE(result) TYPE integertab .
+        VALUE(result) TYPE integertab.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
-
 ENDCLASS.
 
 
@@ -23,7 +22,7 @@ ENDCLASS.
 CLASS zcl_prime_factors_example IMPLEMENTATION.
 
 
-  METHOD FACTORS.
+  METHOD factors.
     CHECK input > 1.
     DATA(inp) = input.
     DATA(fac) = 2.

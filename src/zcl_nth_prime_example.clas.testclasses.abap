@@ -1,7 +1,8 @@
 CLASS ltcl_nth_prime DEFINITION FOR TESTING DURATION SHORT RISK LEVEL HARMLESS FINAL.
 
   PRIVATE SECTION.
-    DATA cut TYPE REF TO zcl_nth_prime.
+    DATA cut TYPE REF TO zcl_nth_prime_example.
+
     METHODS setup.
     METHODS test_first_prime FOR TESTING RAISING cx_static_check.
     METHODS test_second_prime FOR TESTING RAISING cx_static_check.
@@ -9,14 +10,12 @@ CLASS ltcl_nth_prime DEFINITION FOR TESTING DURATION SHORT RISK LEVEL HARMLESS F
     METHODS test_big_prime FOR TESTING RAISING cx_static_check.
     METHODS test_no_zeroth_prime FOR TESTING RAISING cx_static_check.
 
-
-
 ENDCLASS.
 
 CLASS ltcl_nth_prime IMPLEMENTATION.
 
   METHOD setup.
-    cut = NEW zcl_nth_prime( ).
+    cut = NEW #( ).
   ENDMETHOD.
 
   "first prime

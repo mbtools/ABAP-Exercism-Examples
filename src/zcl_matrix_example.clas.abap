@@ -1,28 +1,28 @@
 CLASS zcl_matrix_example DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
 
-    TYPES:
-      integertab TYPE STANDARD TABLE OF i WITH EMPTY KEY .
+    TYPES integertab TYPE STANDARD TABLE OF i WITH EMPTY KEY.
 
     METHODS matrix_row
       IMPORTING
         !string       TYPE string
         !index        TYPE i
       RETURNING
-        VALUE(result) TYPE integertab .
+        VALUE(result) TYPE integertab.
+
     METHODS matrix_column
       IMPORTING
         !string       TYPE string
         !index        TYPE i
       RETURNING
-        VALUE(result) TYPE integertab .
+        VALUE(result) TYPE integertab.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
-
 ENDCLASS.
 
 
@@ -30,7 +30,7 @@ ENDCLASS.
 CLASS zcl_matrix_example IMPLEMENTATION.
 
 
-  METHOD MATRIX_COLUMN.
+  METHOD matrix_column.
     DATA i TYPE i.
     SPLIT string AT '\n' INTO TABLE DATA(rows).
     LOOP AT rows INTO DATA(row).
@@ -44,7 +44,7 @@ CLASS zcl_matrix_example IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD MATRIX_ROW.
+  METHOD matrix_row.
     DATA i TYPE i.
     SPLIT string AT '\n' INTO TABLE DATA(rows).
     READ TABLE rows INTO DATA(row) INDEX index.

@@ -1,6 +1,6 @@
 CLASS zcl_hamming_example DEFINITION
   PUBLIC
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
 
@@ -11,7 +11,10 @@ CLASS zcl_hamming_example DEFINITION
       RETURNING
         VALUE(result)  TYPE i
       RAISING
-        cx_parameter_invalid .
+        cx_parameter_invalid.
+
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
 
@@ -19,7 +22,7 @@ ENDCLASS.
 CLASS zcl_hamming_example IMPLEMENTATION.
 
 
-  METHOD HAMMING_DISTANCE.
+  METHOD hamming_distance.
     DATA i TYPE i.
 
     IF strlen( first_strand ) <> strlen( second_strand ).

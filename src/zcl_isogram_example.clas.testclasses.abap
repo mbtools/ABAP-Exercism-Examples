@@ -1,6 +1,8 @@
 CLASS ltcl_isogram DEFINITION FOR TESTING DURATION SHORT RISK LEVEL HARMLESS FINAL.
+
   PRIVATE SECTION.
-    DATA mo_cut TYPE REF TO zcl_isogram.
+    DATA mo_cut TYPE REF TO zcl_isogram_example.
+
     METHODS setup.
     METHODS is_isogram1 FOR TESTING RAISING cx_static_check.
     METHODS is_isogram2 FOR TESTING RAISING cx_static_check.
@@ -9,7 +11,9 @@ CLASS ltcl_isogram DEFINITION FOR TESTING DURATION SHORT RISK LEVEL HARMLESS FIN
     METHODS is_not_isogram1 FOR TESTING RAISING cx_static_check.
     METHODS is_not_isogram2 FOR TESTING RAISING cx_static_check.
     METHODS is_not_isogram3 FOR TESTING RAISING cx_static_check.
+
 ENDCLASS.
+
 CLASS ltcl_isogram IMPLEMENTATION.
   METHOD setup.
     mo_cut = NEW #( ).
