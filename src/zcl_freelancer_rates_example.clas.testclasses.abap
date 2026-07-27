@@ -2,7 +2,7 @@ CLASS ltcl_freelancer_rates DEFINITION FOR TESTING RISK LEVEL HARMLESS DURATION 
 
   PRIVATE SECTION.
 
-    DATA cut TYPE REF TO zcl_freelancer_rates.
+    DATA cut TYPE REF TO zcl_freelancer_rates_example.
     METHODS setup.
     METHODS test_dayrate16 FOR TESTING RAISING cx_static_check.
     METHODS test_dayrate25 FOR TESTING RAISING cx_static_check.
@@ -22,7 +22,7 @@ ENDCLASS.
 CLASS ltcl_freelancer_rates IMPLEMENTATION.
 
   METHOD setup.
-    cut = NEW zcl_freelancer_rates( ).
+    cut = NEW zcl_freelancer_rates_example( ).
   ENDMETHOD.
 
   METHOD test_dayrate16.
